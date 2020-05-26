@@ -24,4 +24,12 @@ class Spaceship
       bullets.add(new Bullet());
     }
   }
+  
+  boolean checkCollision() {
+    for(Rock r:rocks) {
+      if(dist(x+size/2,y,r.vector.x,r.vector.y)<(r.radius+size/2))
+        return true;
+    }
+    return false;
+  }
 }

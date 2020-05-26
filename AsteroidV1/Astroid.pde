@@ -19,9 +19,17 @@ void keyPressed()
     } else if (keyCode == RIGHT) {
       spaceship.update("right");
     }
+    else if(key==ESC) {
+      System.exit(0);
+    }
   }
-  //else if(key==ENTER)
-  //  spaceship.fire();
-  else if(key == 32)
+  else if(key == 32) {
+    loop();
     setup();
+  }
 }
+
+//void mousePressed() {
+//  loop();  // Holding down the mouse activates looping
+//  setup();
+//}
