@@ -1,7 +1,10 @@
 Map map;
+List<Integer> scores;
 void setup()
 {
   size(720, 640);
+  scores=new ArrayList<Integer>();
+  scores.add(0);
   map=new Map();
 }
 
@@ -11,13 +14,16 @@ void draw()
   map.updateFrame();
 }
 
+
 void keyPressed() 
 {  
   if (key == CODED) {
     if (keyCode == LEFT) {
-      spaceship.update("left");
+      //spaceship.update("left");
+      move="left";
     } else if (keyCode == RIGHT) {
-      spaceship.update("right");
+      //spaceship.update("right");
+      move="right";
     }
     else if(key==ESC) {
       System.exit(0);
@@ -25,8 +31,12 @@ void keyPressed()
   }
   else if(key == 32) {
     loop();
-    setup();
+    map=new Map();
   }
+}
+
+void keyReleased() {
+  move="";
 }
 
 //void mousePressed() {

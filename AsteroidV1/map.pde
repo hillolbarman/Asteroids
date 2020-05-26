@@ -5,10 +5,11 @@ Spaceship spaceship;
 List<Bullet> bullets;
 List<Rock> rocks;
 final int spaceshipOffset=75;
-final int spaceshipMoveSpeed=10;
+final int spaceshipMoveSpeed=5;
 int fireRate=12;
-final int maxRockSize[]={spaceshipMoveSpeed, 25};
+final int maxRockSize[]={spaceshipMoveSpeed*2, spaceshipMoveSpeed*5};
 int maxNoOfRocks=10;
+String move=" ";
 
 class Map {
   Map() {
@@ -20,6 +21,9 @@ class Map {
 
   void updateFrame() {
     createRocks();
+    if(!move.equalsIgnoreCase(" ")){
+      spaceship.update(move);
+    }
     spaceship.drawObject();
     spaceship.fire();
     collectGarbage();
@@ -36,6 +40,7 @@ class Map {
     ui.displayUI();
     if (spaceship.checkCollision()) {
       ui.showGameOver();
+      scores.add(ui.score);
       noLoop();
     }
   }

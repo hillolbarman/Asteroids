@@ -1,3 +1,4 @@
+import java.util.Collections;
 class UI {
   int score;
   UI() {
@@ -5,17 +6,19 @@ class UI {
   }
   void updateScore() {
     score+=1;
-    if (score%20==0) {
+    if (score%10==0) {
       maxNoOfRocks+=2;
       if (maxNoOfRocks%20==0 && fireRate>=5)
         fireRate--;
-       System.out.println(score+" "+maxNoOfRocks+" "+fireRate);
     }
   }
   void displayUI() {
     textAlign(LEFT);
     textSize(16);
     text("Score: "+Integer.toString(score), 5, 20);
+    textAlign(RIGHT);
+    text("Highest Score: "+Integer.toString(Collections.max(scores)),width-5,20);
+    text("Previous Score: "+Integer.toString(scores.get(scores.size()-1)),width-5,20+20);
   }
   void showGameOver() {
     background(0);
