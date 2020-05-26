@@ -20,6 +20,8 @@ void keyPressed()
       spaceship.update("right");
     }
   }
+  //else if(key==ENTER)
+  //  spaceship.fire();
   else if(key == 32)
     setup();
 }

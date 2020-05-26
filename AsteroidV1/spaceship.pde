@@ -8,11 +8,11 @@ class Spaceship
   }
   void update(String direction) {
     if (direction.equalsIgnoreCase("left"))   {
-      if(this.y-spaceshipMoveSpeed>0+size/2)
+      if(this.y-spaceshipMoveSpeed>0+size/2-spaceshipMoveSpeed)
         this.y-=spaceshipMoveSpeed;
     }
     if (direction.equalsIgnoreCase("right"))  {
-      if(this.y+spaceshipMoveSpeed<width-size/2)
+      if(this.y+spaceshipMoveSpeed<width-size/2+spaceshipMoveSpeed)
       this.y+=spaceshipMoveSpeed;
     }
   }

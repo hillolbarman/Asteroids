@@ -7,6 +7,7 @@ class Bullet
     this.y=spaceship.y;
   }
   void update() {
+    //System.out.println(this.x+" "+this.y);
     this.x-=bulletSpeed;
   }
   void drawObject() {
